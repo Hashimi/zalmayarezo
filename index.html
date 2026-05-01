@@ -7,40 +7,57 @@
     <meta name="description" content="مجتمع رهایشی ذلمی آروز - مسکن لوکس و مدرن در مزار شریف">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Inline Fixes for RTL Placeholders & Phone Numbers -->
+
     <style>
-        /* Fix placeholder direction based on page language */
-        [dir="rtl"] input::placeholder, [dir="rtl"] textarea::placeholder { direction: rtl; text-align: right; }
-        [dir="ltr"] input::placeholder, [dir="ltr"] textarea::placeholder { direction: ltr; text-align: left; }
-        
-        /* Force phone numbers to always render LTR correctly */
-        .phone-num { direction: ltr; unicode-bidi: embed; display: inline-block; }
-        .contact-details a { direction: ltr; unicode-bidi: embed; }
+        [dir="rtl"] input::placeholder,
+        [dir="rtl"] textarea::placeholder {
+            direction: rtl;
+            text-align: right;
+        }
+
+        [dir="ltr"] input::placeholder,
+        [dir="ltr"] textarea::placeholder {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .phone-num {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+        }
+
+        .contact-details a {
+            direction: ltr;
+            unicode-bidi: embed;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <div class="header-left">
                 <div class="logo">
                     <img src="logo.png" alt="Zalmay Arezo Logo" onerror="this.style.display='none'">
                 </div>
+
                 <div class="language-toggle" id="langToggle">
                     <button type="button" id="lang-dari" class="active">دری</button>
                     <button type="button" id="lang-en">EN</button>
                 </div>
             </div>
-            
+
             <nav class="nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link" data-dari="صفحه اصلی" data-en="Home">صفحه اصلی</a></li>
                     <li><a href="#about" class="nav-link" data-dari="درباره ما" data-en="About">درباره ما</a></li>
                     <li><a href="#projects" class="nav-link" data-dari="پروژه‌ها" data-en="Projects">پروژه‌ها</a></li>
+                    <li><a href="#units" class="nav-link" data-dari="واحدها" data-en="Units">واحدها</a></li>
                     <li><a href="#services" class="nav-link" data-dari="خدمات" data-en="Services">خدمات</a></li>
                     <li><a href="#contact" class="nav-link" data-dari="تماس" data-en="Contact">تماس</a></li>
+                    <li><a href="#location" class="nav-link" data-dari="موقعیت" data-en="Location">موقعیت</a></li>
                 </ul>
+
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -48,45 +65,83 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <video class="hero-video" autoplay muted loop playsinline poster="1.jpg">
-            <source src="zalmay.mp4" type="video/mp4">
+    <section id="home" class="hero hero-image">
+            <div class="hero-fallback"></div>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="1.jpg">
+            <source src="zalmayarezo.webm" type="video/webm">
         </video>
+        
         <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <div class="hero-logo">
                 <img src="logo.png" alt="Zalmay Arezo Logo" onerror="this.style.display='none'">
+         </div>
+
+            
+
+            <h1 class="hero-title" data-dari="مجتمع رهایشی ذلمی آروز" data-en="Zalmay Arezo Residential Complex">
+                مجتمع رهایشی ذلمی آروز
+            </h1>
+
+            <p class="hero-kicker" data-dari="مجتمع رهایشی مدرن در مزار شریف" data-en="Modern Residential Living in Mazar-e Sharif">
+                مجتمع رهایشی مدرن در مزار شریف
+            </p>
+
+            <p class="hero-subtitle" data-dari="زندگی آرام، لوکس و خانوادگی با امکانات کامل در موقعیت مناسب شهری" data-en="Peaceful, premium family living with complete amenities in a convenient city location">
+                زندگی آرام، لوکس و خانوادگی با امکانات کامل در موقعیت مناسب شهری
+            </p>
+
+            <div class="hero-highlights">
+                <div>
+                    <strong data-dari="۲ و ۳ خوابه" data-en="2 & 3 Bed">۲ و ۳ خوابه</strong>
+                    <span data-dari="واحدهای مسکونی" data-en="Apartment Units">واحدهای مسکونی</span>
+                </div>
+
+                <div>
+                    <strong data-dari="۲۴/۷" data-en="24/7">۲۴/۷</strong>
+                    <span data-dari="امنیت و لفت" data-en="Security & Lift">امنیت و لفت</span>
+                </div>
+
+                <div>
+                    <strong data-dari="مزار شریف" data-en="Mazar-e Sharif">مزار شریف</strong>
+                    <span data-dari="موقعیت مناسب" data-en="Prime Location">موقعیت مناسب</span>
+                </div>
             </div>
-            <h1 class="hero-title" data-dari="مجتمع رهایشی ذلمی آروز" data-en="Zalmay Arezo Residential Complex">مجتمع رهایشی ذلمی آروز</h1>
-            <p class="hero-subtitle" data-dari="زندگی لوکس، مدرن و آرام در قلب مزار شریف" data-en="Luxury, Modern & Peaceful Living in the Heart of Mazar-e Sharif">زندگی لوکس، مدرن و آرام در قلب مزار شریف</p>
+
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary" data-dari="مشاهده پروژه‌ها" data-en="View Projects">مشاهده پروژه‌ها</a>
-                <a href="#contact" class="btn btn-secondary" data-dari="تماس با ما" data-en="Contact Us">تماس با ما</a>
+                <a href="tel:+93799506040" class="btn btn-primary" data-dari="تماس فوری" data-en="Call Now">تماس فوری</a>
+                <a href="https://wa.me/93799506040" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-dari="واتساپ" data-en="WhatsApp">واتساپ</a>
+                <a href="#projects" class="btn btn-ghost" data-dari="مشاهده گالری" data-en="View Gallery">مشاهده گالری</a>
             </div>
         </div>
+
         <div class="hero-scroll"><a href="#about"><i class="fas fa-chevron-down"></i></a></div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-dari="درباره مجتمع" data-en="About The Complex">درباره مجتمع</h2>
                 <div class="section-divider"></div>
             </div>
+
             <div class="about-content">
                 <div class="about-text">
-                    <p data-dari="مجتمع رهایشی ذلمی آروز یک پروژه مدرن و لوکس است که با هدف ارائه زندگی با کیفیت و آرامش‌بخش در مزار شریف طراحی شده است. این مجتمع شامل آپارتمان‌های مختلف با متراژهای متفاوت، با امکانات ذیل میباشد." data-en="Zalmay Arezo Residential Complex is a modern luxury project designed to provide quality and peaceful living in Mazar-e Sharif. The complex features various apartment units with different sizes and the following amenities.">مجتمع رهایشی ذلمی آروز یک پروژه مدرن و لوکس است که با هدف ارائه زندگی با کیفیت و آرامش‌بخش در مزار شریف طراحی شده است. این مجتمع شامل آپارتمان‌های مختلف با متراژهای متفاوت، با امکانات ذیل میباشد.</p>
+                    <p data-dari="مجتمع رهایشی ذلمی آروز یک پروژه مدرن و لوکس است که با هدف ارائه زندگی با کیفیت و آرامش‌بخش در مزار شریف طراحی شده است. این مجتمع شامل آپارتمان‌های مختلف با متراژهای متفاوت، با امکانات ذیل میباشد." data-en="Zalmay Arezo Residential Complex is a modern luxury project designed to provide quality and peaceful living in Mazar-e Sharif. The complex features various apartment units with different sizes and the following amenities.">
+                        مجتمع رهایشی ذلمی آروز یک پروژه مدرن و لوکس است که با هدف ارائه زندگی با کیفیت و آرامش‌بخش در مزار شریف طراحی شده است. این مجتمع شامل آپارتمان‌های مختلف با متراژهای متفاوت، با امکانات ذیل میباشد.
+                    </p>
+
                     <ul class="about-features">
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="طراحی مدرن و رویایی" data-en="Modern & Dreamy Design">طراحی مدرن و رویایی</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="قباله شرعی و لفت 24 ساعته برقی و سولری" data-en="Sharia Deed & 24/7 Electric/Solar Lift">قباله شرعی و لفت 24 ساعته برقی و سولری</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="امنیت ۲۴ ساعته و اطفاعیه مجهز" data-en="24/7 Security & Advanced Fire Suppression">امنیت ۲۴ ساعته و اطفاعیه مجهز</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="فضای سبز و پارک. مسجد شریف و سوپر مارکیت" data-en="Green Spaces, Park, Mosque & Supermarket">فضای سبز و پارک. مسجد شریف و سوپر مارکیت</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="پارکنگ وسیع وسایط. سونا و حوض آببازی گرم و سرد" data-en="Spacious Parking, Sauna & Hot/Cold Pool">پارکنگ وسیع وسایط. سونا و حوض آببازی گرم و سرد</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-dari="کودکستان و پارک بازی برای اطفال" data-en="Kindergarten & Children's Playground">کودکستان و پارک بازی برای اطفال</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="طراحی مدرن و رویایی" data-en="Modern & Dreamy Design">طراحی مدرن و رویایی</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="قباله شرعی و لفت 24 ساعته برقی و سولری" data-en="Sharia Deed & 24/7 Electric/Solar Lift">قباله شرعی و لفت 24 ساعته برقی و سولری</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="امنیت ۲۴ ساعته و اطفاعیه مجهز" data-en="24/7 Security & Advanced Fire Suppression">امنیت ۲۴ ساعته و اطفاعیه مجهز</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="فضای سبز و پارک، مسجد شریف و سوپر مارکیت" data-en="Green Spaces, Park, Mosque & Supermarket">فضای سبز و پارک، مسجد شریف و سوپر مارکیت</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="پارکنگ وسیع وسایط، سونا و حوض آببازی گرم و سرد" data-en="Spacious Parking, Sauna & Hot/Cold Pool">پارکنگ وسیع وسایط، سونا و حوض آببازی گرم و سرد</span></li>
+                        <li><i class="fas fa-check-circle"></i><span data-dari="کودکستان و پارک بازی برای اطفال" data-en="Kindergarten & Children's Playground">کودکستان و پارک بازی برای اطفال</span></li>
                     </ul>
                 </div>
+
                 <div class="about-image">
                     <img src="1.jpg" alt="مجتمع ذلمی آروز" onerror="this.src='https://via.placeholder.com/500x400/1a3a5c/ffffff?text=Zalmay+Arezo'">
                 </div>
@@ -94,75 +149,203 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+
+<section class="section trust">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-dari="چرا ذلمی آروز؟" data-en="Why Zalmay Arezo?">چرا ذلمی آروز؟</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-file-signature"></i>
+                    <h3 data-dari="اسناد معتبر" data-en="Reliable Documents">اسناد معتبر</h3>
+                    <p data-dari="قباله شرعی و روند واضح خرید." data-en="Clear purchase process and Sharia deed support.">قباله شرعی و روند واضح خرید.</p>
+                </div>
+
+                <div class="trust-item">
+                    <i class="fas fa-map-location-dot"></i>
+                    <h3 data-dari="موقعیت مناسب" data-en="Convenient Location">موقعیت مناسب</h3>
+                    <p data-dari="دسترسی آسان در مزار شریف." data-en="Easy access in Mazar-e Sharif.">دسترسی آسان در مزار شریف.</p>
+                </div>
+
+                <div class="trust-item">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3 data-dari="امنیت و آرامش" data-en="Security & Comfort">امنیت و آرامش</h3>
+                    <p data-dari="محیط خانوادگی با امنیت ۲۴ ساعته." data-en="Family-friendly environment with 24/7 security.">محیط خانوادگی با امنیت ۲۴ ساعته.</p>
+                </div>
+
+                <div class="trust-item">
+                    <i class="fas fa-building-circle-check"></i>
+                    <h3 data-dari="امکانات کامل" data-en="Complete Amenities">امکانات کامل</h3>
+                    <p data-dari="پارکنگ، مسجد، فضای سبز، سوپر مارکیت و بیشتر." data-en="Parking, mosque, green space, supermarket and more.">پارکنگ، مسجد، فضای سبز، سوپر مارکیت و بیشتر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="projects" class="section projects bg-light">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-dari="گالری پروژه های ما" data-en="Our Projects Gallery">گالری پروژه های ما</h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle" data-dari="گالری تصاویر از پروژه‌های در حال ساخت و تکمیل شده" data-en="Gallery of images from ongoing and completed projects">گالری تصاویر از پروژه‌های در حال ساخت و تکمیل شده</p>
+                <p class="section-subtitle" data-dari="گالری تصاویر از پروژه‌های در حال ساخت و تکمیل شده" data-en="Gallery of images from ongoing and completed projects">
+                    گالری تصاویر از پروژه‌های در حال ساخت و تکمیل شده
+                </p>
             </div>
+
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image"><img src="1.jpg" alt="پروژه ۱" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+1'"><div class="project-overlay"><a href="1.jpg" class="project-link" target="_blank"><i class="fas fa-eye"></i></a></div></div>
-                    <div class="project-info"><h3 data-dari="بلوک آفرینش" data-en="Afrinash Block">بلوک آفرینش</h3><p data-dari="آپارتمان‌های ۲ و ۳ خوابه با طراحی مدرن" data-en="2 & 3 bedroom apartments with modern design">آپارتمان‌های ۲ و ۳ خوابه با طراحی مدرن</p></div>
+                    <div class="project-image">
+                        <img src="1.jpg" alt="پروژه ۱" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+1'">
+                        <div class="project-overlay"><a href="1.jpg" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-dari="بلاک اول" data-en="First Block">بلاک اول</h3>
+                        <p data-dari="آپارتمان‌های ۲ و ۳ خوابه با طراحی مدرن" data-en="2 & 3 bedroom apartments with modern design">آپارتمان‌های ۲ و ۳ خوابه با طراحی مدرن</p>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image"><img src="2.jpg" alt="پروژه ۲" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+2'"><div class="project-overlay"><a href="2.jpg" class="project-link" target="_blank"><i class="fas fa-eye"></i></a></div></div>
-                    <div class="project-info"><h3 data-dari="بلوک امید" data-en="Omeed Block">بلوک امید</h3><p data-dari="واحدهای لوکس با نمای زیبا و امکانات کامل" data-en="Luxury units with beautiful views and full amenities">واحدهای لوکس با نمای زیبا و امکانات کامل</p></div>
+                    <div class="project-image">
+                        <img src="2.jpg" alt="پروژه ۲" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+2'">
+                        <div class="project-overlay"><a href="2.jpg" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-dari="بلاک دوم" data-en="Second Block">بلاک دوم</h3>
+                        <p data-dari="واحدهای لوکس با نمای زیبا و امکانات کامل" data-en="Luxury units with beautiful views and full amenities">واحدهای لوکس با نمای زیبا و امکانات کامل</p>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image"><img src="3.jpg" alt="پروژه ۳" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+3'"><div class="project-overlay"><a href="3.jpg" class="project-link" target="_blank"><i class="fas fa-eye"></i></a></div></div>
-                    <div class="project-info"><h3 data-dari="بلوک آرامش" data-en="Aramesh Block">بلوک آرامش</h3><p data-dari="محیط آرام و خانوادگی با فضای سبز وسیع" data-en="Peaceful family environment with extensive green spaces">محیط آرام و خانوادگی با فضای سبز وسیع</p></div>
+                    <div class="project-image">
+                        <img src="3.jpg" alt="پروژه ۳" onerror="this.src='https://via.placeholder.com/400x300/2c5282/ffffff?text=Project+3'">
+                        <div class="project-overlay"><a href="3.jpg" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-dari="بلاک سوم" data-en="3rd Block">بلاک سوم</h3>
+                        <p data-dari="محیط آرام و خانوادگی با فضای سبز وسیع" data-en="Peaceful family environment with extensive green spaces">محیط آرام و خانوادگی با فضای سبز وسیع</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section services">
+    <section id="units" class="section units">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-dari="واحدهای قابل فروش" data-en="Available Units">واحدهای قابل فروش</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle" data-dari="گزینه‌های مناسب برای خانواده‌ها و سرمایه‌گذاری مطمئن" data-en="Smart options for families and confident investment">
+                    گزینه‌های مناسب برای خانواده‌ها و سرمایه‌گذاری مطمئن
+                </p>
+            </div>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <h3 data-dari="آپارتمان ۲ خوابه" data-en="2 Bedroom Apartment">آپارتمان ۲ خوابه</h3>
+                    <p data-dari="مناسب برای خانواده‌های کوچک با طراحی کاربردی و نورگیری عالی." data-en="Ideal for small families with practical layout and excellent natural light.">مناسب برای خانواده‌های کوچک با طراحی کاربردی و نورگیری عالی.</p>
+                    <a href="https://wa.me/93799506040" target="_blank" rel="noopener noreferrer" class="unit-link" data-dari="دریافت معلومات" data-en="Ask for Details">دریافت معلومات</a>
+                </div>
+
+                <div class="unit-card featured-unit">
+                    <span data-dari="پیشنهادی" data-en="Recommended">پیشنهادی</span>
+                    <h3 data-dari="آپارتمان ۳ خوابه" data-en="3 Bedroom Apartment">آپارتمان ۳ خوابه</h3>
+                    <p data-dari="انتخاب عالی برای خانواده‌ها با فضای بیشتر، آسایش بهتر و امکانات کامل." data-en="A strong family choice with more space, comfort and complete amenities.">انتخاب عالی برای خانواده‌ها با فضای بیشتر، آسایش بهتر و امکانات کامل.</p>
+                    <a href="tel:+93799506040" class="unit-link" data-dari="تماس برای قیمت" data-en="Call for Price">تماس برای قیمت</a>
+                </div>
+
+                <div class="unit-card">
+                    <h3 data-dari="مشاوره خرید" data-en="Purchase Consultation">مشاوره خرید</h3>
+                    <p data-dari="برای شرایط پرداخت، اسناد، موقعیت و بازدید حضوری با تیم فروش در تماس شوید." data-en="Contact the sales team for payment terms, documents, location and visits.">برای شرایط پرداخت، اسناد، موقعیت و بازدید حضوری با تیم فروش در تماس شوید.</p>
+                    <a href="#contact" class="unit-link" data-dari="رزرو مشاوره" data-en="Book Consultation">رزرو مشاوره</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="services" class="section services bg-light">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-dari="خدمات ما" data-en="Our Services">خدمات ما</h2>
                 <div class="section-divider"></div>
             </div>
+
             <div class="services-grid">
-                <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3 data-dari="فروش واحدها" data-en="Unit Sales">فروش واحدها</h3><p data-dari="فروش آپارتمان‌ها با شرایط پرداخت انعطاف‌پذیر و مشاوره رایگان" data-en="Apartment sales with flexible payment terms and free consultation">فروش آپارتمان‌ها با شرایط پرداخت انعطاف‌پذیر و مشاوره رایگان</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3 data-dari="ساخت و ساز" data-en="Construction">ساخت و ساز</h3><p data-dari="اجرای پروژه‌های ساختمانی با استانداردهای بین‌المللی و نظارت فنی" data-en="Construction projects with international standards and technical supervision">اجرای پروژه‌های ساختمانی با استانداردهای بین‌المللی و نظارت فنی</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3 data-dari="مشاوره املاک" data-en="Real Estate Consulting">مشاوره املاک</h3><p data-dari="ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن" data-en="Professional consulting services for investment and home purchasing">ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3 data-dari="مدیریت و نگهداری" data-en="Property Management">مدیریت و نگهداری</h3><p data-dari="خدمات پس از فروش، نگهداری و مدیریت حرفه‌ای مجتمع" data-en="After-sales services, maintenance and professional complex management">خدمات پس از فروش، نگهداری و مدیریت حرفه‌ای مجتمع</p></div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3 data-dari="فروش واحدها" data-en="Unit Sales">فروش واحدها</h3>
+                    <p data-dari="فروش آپارتمان‌ها با شرایط پرداخت انعطاف‌پذیر و مشاوره رایگان" data-en="Apartment sales with flexible payment terms and free                    consultation">فروش آپارتمان‌ها با شرایط پرداخت انعطاف‌پذیر و مشاوره رایگان</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3 data-dari="ساخت و ساز" data-en="Construction">ساخت و ساز</h3>
+                    <p data-dari="اجرای پروژه‌های ساختمانی با استانداردهای بین‌المللی و نظارت فنی" data-en="Construction projects with international standards and technical supervision">اجرای پروژه‌های ساختمانی با استانداردهای بین‌المللی و نظارت فنی</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 data-dari="مشاوره املاک" data-en="Real Estate Consulting">مشاوره املاک</h3>
+                    <p data-dari="ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن" data-en="Professional consulting services for investment and home purchasing">ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن</p>
+                </div>
+
+<div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 data-dari="مشاوره املاک" data-en="Real Estate Consulting">مشاوره املاک</h3>
+                    <p data-dari="ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن" data-en="Professional consulting services for investment and home purchasing">ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن</p>
+                </div>
+
+<div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 data-dari="مشاوره املاک" data-en="Real Estate Consulting">مشاوره املاک</h3>
+                    <p data-dari="ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن" data-en="Professional consulting services for investment and home purchasing">ارائه خدمات مشاوره تخصصی برای سرمایه‌گذاری و خرید مسکن</p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-dari="مدیریت و نگهداری" data-en="Property Management">مدیریت و نگهداری</h3>
+                    <p data-dari="خدمات پس از فروش، نگهداری و مدیریت حرفه‌ای مجتمع" data-en="After-sales services, maintenance and professional complex management">خدمات پس از فروش، نگهداری و مدیریت حرفه‌ای مجتمع</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    
+
+
     <section id="contact" class="section contact bg-dark">
         <div class="container">
             <div class="section-header text-white">
                 <h2 class="section-title" data-dari="تماس با ما" data-en="Contact Us">تماس با ما</h2>
                 <div class="section-divider divider-white"></div>
             </div>
+
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <!-- Address -->
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="contact-details">
                             <h4 data-dari="آدرس دفتر" data-en="Office Address">آدرس دفتر</h4>
-                            <p data-dari="هوتل عروسی خالد آرزو، سرک حلقوی عزیز آباد – مزار شریف" data-en="Khalid Arezo Hotel, Azizabad Ring Road, Mazar-e Sharif">هوتل عروسی خالد آرزو، سرک حلقوی عزیز آباد – مزار شریف</p>
+                            <p data-dari="هوتل عروسی خالد آرزو، سرک حلقوی عزیز آباد - مزار شریف" data-en="Khalid Arezo Hotel, Azizabad Ring Road, Mazar-e Sharif">هوتل عروسی خالد آرزو، سرک حلقوی عزیز آباد - مزار شریف</p>
                         </div>
                     </div>
-                    <!-- Phones (Fixed LTR Rendering) -->
+
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
                         <div class="contact-details">
                             <h4 data-dari="شماره‌های تماس" data-en="Contact Numbers">شماره‌های تماس</h4>
-                            <a href="tel:0799263636"><i class="fas fa-mobile-alt"></i> <span class="phone-num">0799 263 636</span></a>
-                            <a href="tel:0789094004"><i class="fas fa-mobile-alt"></i> <span class="phone-num">0789 094 004</span></a>
-                            <a href="https://wa.me/93799506040" target="_blank"><i class="fab fa-whatsapp"></i> <span class="phone-num">+93 799 506 040</span></a>
+                            <a href="tel:0799263636"><i class="fas fa-mobile-alt"></i><span class="phone-num">0799 263 636</span></a>
+                            <a href="tel:0789094004"><i class="fas fa-mobile-alt"></i><span class="phone-num">0789 094 004</span></a>
+                            <a href="https://wa.me/93799506040" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span class="phone-num">+93 799 506 040</span></a>
                         </div>
                     </div>
-                    <!-- Hours -->
+
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div class="contact-details">
@@ -172,44 +355,65 @@
                         </div>
                     </div>
                 </div>
-                <!-- Form (Fixed Placeholder Direction) -->
-                <form class="contact-form" id="contactForm">
+
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="983d2241-5834-4cee-b038-b3fc9d4527b9">
+                    <input type="hidden" name="subject" value="New message from Zalmay Arezo website">
+
                     <div class="form-group"><input type="text" name="name" placeholder="نام شما / Your Name" dir="auto" required></div>
                     <div class="form-group"><input type="tel" name="phone" placeholder="شماره تماس / Phone Number" dir="auto" required></div>
                     <div class="form-group"><input type="email" name="email" placeholder="ایمیل / Email" dir="auto"></div>
                     <div class="form-group"><textarea name="message" rows="5" placeholder="پیام شما / Your Message" dir="auto" required></textarea></div>
+
                     <button type="submit" class="btn btn-primary btn-block" data-dari="ارسال پیام" data-en="Send Message">ارسال پیام</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-    <div class="container footer-content">
-        <div class="footer-logo">
-            <img src="logo.png" alt="Zalmay Arezo" onerror="this.style.display='none'">
-            <h3>Zalmay Arezo</h3>
-        </div>
-        
-        <p class="footer-text" data-dari="© ۱۴۰۳ مجتمع رهایشی ذلمی آروز. کلیه حقوق محفوظ است." data-en="© 2024 Zalmay Arezo Residential Complex. All rights reserved.">© ۱۴۰۳ مجتمع رهایشی ذلمی آروز. کلیه حقوق محفوظ است.</p>
-        
-        <!-- ✅ Updated Credit Line (Link-Safe) -->
-        <p class="footer-text">
-            <span data-dari="طراحی شده توسط " data-en="Designed By ">طراحی شده توسط </span>
-            <a href="https://hashimi.github.io/hashimihideout/" target="_blank" rel="noopener noreferrer" class="footer-link">HashimiHideout</a>
-        </p>
+    <section id="location" class="section location bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-dari="موقعیت دفتر" data-en="Office Location">موقعیت دفتر</h2>
+                <div class="section-divider"></div>
+            </div>
 
-        <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://maps.google.com/maps?q=36.6977052029749,67.10289082247323&z=16&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Zalmay Arezo Office Location">
+                </iframe>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Zalmay Arezo" onerror="this.style.display='none'">
+                <h3>Zalmay Arezo</h3>
+            </div>
+
+            <p class="footer-text" data-dari="© ۱۴۰۳ مجتمع رهایشی ذلمی آروز. کلیه حقوق محفوظ است." data-en="© 2024 Zalmay Arezo Residential Complex. All rights reserved.">
+                © ۱۴۰۳ مجتمع رهایشی ذلمی آروز. کلیه حقوق محفوظ است.
+            </p>
+
+            <p class="footer-text">
+                <span data-dari="طراحی شده توسط " data-en="Designed By ">طراحی شده توسط </span>
+                <a href="https://hashimi.github.io/hashimihideout/" target="_blank" rel="noopener noreferrer" class="footer-link">HashimiHideout</a>
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61574698380315" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/93799506040" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
